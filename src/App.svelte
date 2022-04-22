@@ -1,6 +1,6 @@
 <script>
-  let color1 = '#B3FEFF';
-  let color2 = '#DD33FF';
+  let color1 = '#DAF5F6';
+  let color2 = '#17A2CD';
 
   let deg = 0;
 
@@ -77,7 +77,7 @@
   :root{
     --font-1920: 1.4vw;
     --font-768: 4.4vw;
-    --font-color: #7d7d7d;
+    --font-color: #949494;
   }
   
   *, *::before, *::after{
@@ -91,7 +91,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    background: #F5FFFD;
+    background: #D5D5D5;
   }
 
   main{
@@ -115,8 +115,7 @@
     border-radius: 50%;
     width: 30vw;
     height: 30vw;
-    box-shadow: 0px 2vw 3vw rgba(0, 0, 0, 0.15),
-                0px -2vw 3vw rgba(255, 255, 255, 1);
+    box-shadow: 1vw 2vw 3vw rgba(0, 0, 0, 0.25);
   }
 
   input[type="number"].degInput{
@@ -149,9 +148,9 @@
     align-items: center;
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(0.65vh);
-    border: 1px solid (255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0px 0.55vw 1vw rgba(0, 0, 0, 0.15);
   }
 
@@ -174,9 +173,15 @@
     -webkit-appearance: none;
     border-radius: 1vw;
     box-shadow: -1vw 0 1.5vw rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(0.65vh);
-    border: 1px solid (255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.25s ease;
+  }
+
+  .degRange:hover{
+    background: rgba(255, 255, 255, 0.85);
+    transition: all 0.25s ease;
   }
 
   .degRange::-webkit-slider-thumb {
@@ -191,7 +196,7 @@
     box-shadow: -1vw 0 1.5vw rgba(0, 0, 0, 0.25);
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(0.65vh);
-    border: 1px solid (255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     
     cursor: pointer;
   }
@@ -222,37 +227,30 @@
   div.colorPicker{
     width: 15vw;
     height: 4vw;
-
-    background: #fff;
     
     display: grid;
     justify-content: center;
     align-items: center;
     align-content: center;
-    grid-template-columns: auto 50%;
-
-    overflow: hidden;
-
-    box-shadow: 0 1vw 1.5vw rgba(0, 0, 0, 0.25);
-    border-radius: 1vw;
+    justify-items: center;
+    grid-template-columns: auto 80%;
   } 
 
   input[type="color"].colorBar {
     position: relative;
     top: -50%;
-    left: -50%;
-    transform: transition(50%, 50%);
     -webkit-appearance: none;
     border: none;
     background: transparent;
 
-    width: 6vw;
-    height: 6vw;
+    width: 3vw;
+    height: 3.25vw;
   }
   
   input[type="color"].colorBar::-webkit-color-swatch {
     border-radius: 50%;
     border: none;
+    box-shadow: 0 0.8vw 1vw rgba(0, 0, 0, 0.17);
   }
   
   label{
@@ -260,6 +258,7 @@
     color: var(--font-color);
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.4vw;
   }
 
   button.randomBtn{
@@ -273,14 +272,14 @@
     
     outline: none;
     
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(0.65vh);
-    border: 1px solid (255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0px 0.55vw 1vw rgba(0, 0, 0, 0.15);
 
     font-weight: 300;
     font-size: calc(var(--font-1920) - 0.25vw);
-    color: #4F4F4F;
+    color: #161616;
 
     cursor: pointer;
     transition: all 0.25s ease;
@@ -301,22 +300,26 @@
     div.circle{
       width: 75vw;
       height: 75vw;
+      box-shadow: 2vw 4vw 5vw rgba(0, 0, 0, 0.25);
     }
   
     input[type="color"].colorBar{
-      width: 20vw;
-      height: 20vw;
+      width: 8vw;
+      height: 8.5vw;
+    }
+
+    input[type="color"].colorBar::-webkit-color-swatch {
+      box-shadow: 0 1.5vw 3vw rgba(0, 0, 0, 0.2);
     }
 
     div.colorPicker{
       width: 45vw;
       height: 15vw;
-      
-      border-radius: 4vw;
     }
 
     label{
       font-size: var(--font-768);
+      letter-spacing: 2vw;
     }
 
     input[type="number"].degInput{
@@ -377,6 +380,7 @@
       border-radius: 4vw;
       
       font-size: calc(var(--font-768) - 0.25vw);
+      box-shadow: 0px 1vw 3vw rgba(0, 0, 0, 0.15);
     }
 
     button.randomBtn:hover{
